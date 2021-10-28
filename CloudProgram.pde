@@ -5,7 +5,7 @@ void setup() {
   noStroke();
   for (int i = 0; i < 10; i++)
     clee[i] = new StormCloud();
-  for (int i = 0; i< clee.length; i++)
+  for (int i = 10; i< clee.length; i++)
     clee[i] = new Cloud();
 }
 
