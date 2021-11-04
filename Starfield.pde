@@ -1,3 +1,4 @@
+PImage img;
 Particle[] phil = new Particle[50];
 void setup() {
   size(600, 600);
@@ -5,9 +6,10 @@ void setup() {
     phil[i] = new OddBallParticle();
   for (int i =10; i< phil.length; i++)
     phil[i] = new Particle();
+    //background (112, 195, 207); //if want lines
 }
 void draw() {
-  background (112, 195, 207);
+  background (112, 195, 207); // if want just moving dots
   for (int i = 0; i< phil.length; i++) {
     phil[i].show();
     phil[i].move();
@@ -28,6 +30,8 @@ class Particle
   void move() {
     myX = myX + Math.cos(myAngle) * mySpeed;
     myY =  myY + Math.sin(myAngle) * mySpeed;
+    if (myX >= 600)
+      myX = 0;
   }
 
   void show() {
