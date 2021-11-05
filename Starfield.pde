@@ -1,15 +1,18 @@
-PImage img;
-Particle[] phil = new Particle[50];
+PImage cat;
+Particle[] phil = new Particle[100];
 void setup() {
   size(600, 600);
-    for (int i =0; i<10; i++)
+  cat = loadImage("cat.png");
+    for (int i =0; i<50; i++)
     phil[i] = new OddBallParticle();
-  for (int i =10; i< phil.length; i++)
+    for (int i =50; i< phil.length; i++)
     phil[i] = new Particle();
     //background (112, 195, 207); //if want lines
 }
 void draw() {
-  background (112, 195, 207); // if want just moving dots
+  background (122,85,40);
+  // if want just moving dots
+  image(cat, 150,150, width/2, height/2);
   for (int i = 0; i< phil.length; i++) {
     phil[i].show();
     phil[i].move();
@@ -30,13 +33,14 @@ class Particle
   void move() {
     myX = myX + Math.cos(myAngle) * mySpeed;
     myY =  myY + Math.sin(myAngle) * mySpeed;
-    if (myX >= 600)
+    if (myX >= 900)
       myX = 0;
   }
 
   void show() {
-    //fill(myColor);
-    ellipse((float)myX, (float)myY, 30, 30);
+    noStroke();
+    fill(240,65,45);
+    ellipse((float)myX, (float)myY, 20, 20);
   }
 }
 
@@ -47,6 +51,8 @@ class OddBallParticle extends Particle {
   }
 
   void show() {
-    ellipse((float)myX, (float)myY, 20, 70);
+    noStroke();
+    fill(222,53,156);
+    ellipse((float)myX, (float)myY, 15, 15);
   }
 }
