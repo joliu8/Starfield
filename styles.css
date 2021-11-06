@@ -8,12 +8,12 @@ body {
 #content {
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+border:5px dotted white;
 }
 
 header {
 	background-color: #4ec2cf;
-	border:5px dotted white;
 }
 
 footer {
