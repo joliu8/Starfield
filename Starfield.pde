@@ -23,7 +23,7 @@ void draw() {
   }
   fill(255);
   textSize(30);
-  text("funny looking cats send out hearts", 50, 550);
+  text("funny looking cats sending out hearts", 50, 550);
 }
 
 void mousePressed() {
